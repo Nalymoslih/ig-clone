@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import * as Yup from 'yup';
 import {Button, Divider, Image} from 'react-native-elements';
 import {Formik} from 'formik';
+import validUrl from 'valid-url';
 
 const placeholder_IMG =
   'https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=';
@@ -12,12 +13,16 @@ const uploadPostSchema = Yup.object().shape({
   imageUrl: Yup.string().url().required('A URL is required'),
   caption: Yup.string().max(2200, 'Caption has reached the character'),
 });
-const FormikPostUploaded = () => {
+const FormikPostUploaded = ({navigation}) => {
   const [thumbnailUrl, setThumbnailUrl] = useState(placeholder_IMG);
   return (
     <Formik
-      initialValues={{imageUrl: '', caption: ''}}
-      onSubmit={values => console.log(values)}
+      initialValues={{caption: '', imageUrl: ''}}
+      onSubmit={values => {
+        console.log(values);
+        console.log('Your post was submitted successfully 🥳');
+        navigation.goBack();
+      }}
       validationSchema={uploadPostSchema}
       validateOnMount={true}>
       {({handleBlur, handleChange, handleSubmit, values, errors, isValid}) => (
@@ -29,7 +34,11 @@ const FormikPostUploaded = () => {
               flexDirection: 'row',
             }}>
             <Image
-              source={{uri: thumbnailUrl ? thumbnailUrl : placeholder_IMG}}
+              source={{
+                uri: validUrl.isUri(thumbnailUrl)
+                  ? thumbnailUrl
+                  : placeholder_IMG,
+              }}
               style={{width: 100, height: 100}}
             />
             <View style={{flex: 1, marginLeft: 12}}>
@@ -38,7 +47,7 @@ const FormikPostUploaded = () => {
                 placeholder="Write a cption..."
                 placeholderTextColor={'gray'}
                 multiline={true}
-                onChange={handleChange('caption')}
+                onChangeText={handleChange('caption')}
                 onBlur={handleBlur('caption')}
                 value={values.caption}
               />
@@ -60,7 +69,7 @@ const FormikPostUploaded = () => {
           )}
           <Button
             style={{marginTop: 8}}
-            title="Submit"
+            title="Share"
             onPress={handleSubmit}
             disabled={!isValid}
           />
