@@ -25,8 +25,18 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+pod 'Firebase', :modular_headers => true
+pod 'FirebaseCoreInternal', :modular_headers => true
+pod 'GoogleUtilities', :modular_headers => true
+pod 'FirebaseCore', :modular_headers => true
+
 target 'instagramClone' do
   config = use_native_modules!
+ 
+  
+  pod 'Firebase/Core'
+  pod 'Firebase/Analytics' 
+  pod 'Firebase/RemoteConfig'
 
   # Flags change depending on the env values.
   flags = get_default_flags()
