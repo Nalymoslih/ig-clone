@@ -31,17 +31,6 @@ const LoginForm = ({navigation}) => {
       Alert.alert(
         'My Lord...',
         error.message + '\n\n... what would you like to do next? 👀',
-        [
-          {
-            text: 'Ok',
-            onPress: () => console.log('Ok'),
-            style: 'cancel',
-          },
-          {
-            text: 'Sign Up',
-            onPress: () => navigation.push('SignupScreen'),
-          },
-        ],
       );
     }
   };
