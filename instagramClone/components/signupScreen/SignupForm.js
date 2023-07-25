@@ -10,7 +10,7 @@ import React from 'react';
 import {Formik} from 'formik';
 import * as yup from 'yup';
 import Validator from 'email-validator';
-import {useNavigation} from '@react-navigation/native';
+// import firebase from '../../firebase';
 const SignupForm = ({navigation}) => {
   const SignupFormSchema = yup.object().shape({
     email: yup.string().email().required('An email is required'),
@@ -20,12 +20,35 @@ const SignupForm = ({navigation}) => {
       .min(6, 'Password is too short - should be 8 chars minimum.'),
   });
 
+  const onSignup = async (email, password) => {
+    try {
+      await firebase.auth().createUserWithEmailAndPassword(email, password);
+      console.log('Firebase Signup Successfull', email, password);
+    } catch (error) {
+      Alert.alert(
+        'My Lord...',
+        error.message + '\n\n... what would you like to do next? 👀',
+        [
+          {
+            text: 'Ok',
+            onPress: () => console.log('Ok'),
+            style: 'cancel',
+          },
+          {
+            text: 'Sign Up',
+            onPress: () => navigation.push('SignupScreen'),
+          },
+        ],
+      );
+    }
+  };
+
   return (
     <View style={styles.wrapper}>
       <Formik
         initialValues={{email: '', password: '', username: ''}}
         onSubmit={values => {
-          console.log(values);
+          onSignup(values.email, values.password);
         }}
         validationSchema={SignupFormSchema}
         validateOnMount={true}>
