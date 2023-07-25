@@ -2,18 +2,19 @@ import {
   View,
   Text,
   TextInput,
-  Button,
   StyleSheet,
   Pressable,
   TouchableOpacity,
   Alert,
 } from 'react-native';
 import React from 'react';
-// import firebase from '../../firebase';
 
 import {Formik} from 'formik';
 import * as yup from 'yup';
 import Validator from 'email-validator';
+import {firebase} from '@react-native-firebase/installations';
+
+import auth from '@react-native-firebase/auth';
 const LoginForm = ({navigation}) => {
   const LoginFormSchema = yup.object().shape({
     email: yup.string().email().required('An email is required'),
@@ -25,10 +26,23 @@ const LoginForm = ({navigation}) => {
 
   const onLogin = async (email, password) => {
     try {
-      await firebase.auth().signInWithEmailAndPassword(email, password);
-      console.log('Firebase Login Successfull', email, password);
+      await auth().signInWithEmailAndPassword(email, password);
     } catch (error) {
-      Alert.alert(error.message);
+      Alert.alert(
+        'My Lord...',
+        error.message + '\n\n... what would you like to do next? 👀',
+        [
+          {
+            text: 'Ok',
+            onPress: () => console.log('Ok'),
+            style: 'cancel',
+          },
+          {
+            text: 'Sign Up',
+            onPress: () => navigation.push('SignupScreen'),
+          },
+        ],
+      );
     }
   };
 
