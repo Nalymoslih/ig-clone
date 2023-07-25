@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
+// import firebase from '../../firbase';
 
 import {Formik} from 'formik';
 import * as yup from 'yup';
@@ -21,12 +22,21 @@ const LoginForm = ({navigation}) => {
       .min(6, 'Password is too short - should be 8 chars minimum.'),
   });
 
+  const onLogin = async (email, password) => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      console.log('Login Success');
+    } catch (error) {
+      console.log('Login Error: ', error);
+    }
+  };
+
   return (
     <View style={styles.wrapper}>
       <Formik
         initialValues={{email: '', password: ''}}
         onSubmit={values => {
-          console.log(values);
+          onLogin(values.email, values.password);
         }}
         validationSchema={LoginFormSchema}
         validateOnMount={true}>
