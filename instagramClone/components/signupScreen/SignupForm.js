@@ -5,12 +5,15 @@ import {
   TextInput,
   Pressable,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import React from 'react';
 import {Formik} from 'formik';
 import * as yup from 'yup';
 import Validator from 'email-validator';
 // import firebase from '../../firebase';
+import {firebase} from '@react-native-firebase/installations';
+
 const SignupForm = ({navigation}) => {
   const SignupFormSchema = yup.object().shape({
     email: yup.string().email().required('An email is required'),
