@@ -37,6 +37,8 @@ target 'instagramClone' do
   pod 'Firebase/Core'
   pod 'Firebase/Analytics' 
   pod 'Firebase/RemoteConfig'
+  pod 'Firebase/Firestore'
+
 
   # Flags change depending on the env values.
   flags = get_default_flags()
