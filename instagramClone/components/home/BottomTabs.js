@@ -1,15 +1,5 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  StyleSheet,
-  Divider,
-  FlatList,
-} from 'react-native';
+import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
-
-// import {act} from 'react-test-renderer';
 
 export const bottomTabIcons = [
   {
