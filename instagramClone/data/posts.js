@@ -55,7 +55,8 @@ export const POSTS = [
     ],
   },
   {
-    imageUrl: 'https://picsum.photos/200/300',
+    imageUrl:
+      'https://i.pinimg.com/originals/d5/29/09/d52909b3751b3f8507873d280295ccc7.jpg',
     user: USERS[3].user,
     likes: 870,
     caption:
