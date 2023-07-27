@@ -1,7 +1,7 @@
 import {USERS} from './users';
 export const POSTS = [
   {
-    imageUrl: 'https://pbs.twimg.com/media/FADhDRwXoAA8Rbc.jpg',
+    imageUrl: 'https://pbs.twimg.com/media/Ec_tkGPWsAYTyiT.jpg',
     user: USERS[0].user,
     likes: 7870,
     caption:
