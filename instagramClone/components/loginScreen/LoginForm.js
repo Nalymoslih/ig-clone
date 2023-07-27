@@ -99,18 +99,6 @@ const LoginForm = ({navigation}) => {
               titleSize={20}
               style={styles.button(isValid)}
               onPress={handleSubmit}
-              // onPress={async () => {
-              //   try {
-              //     await db.collection('users').add({
-              //       authUser_uid: authUser.user.uid,
-              //       username: user,
-              //       email: authUser.user.email,
-              //       profilePicture: await getRandomProfilePicture(),
-              //     });
-              //   } catch (error) {
-              //     console.log(error);
-              //   }
-              // }}
               disabled={!isValid}>
               <Text style={styles.buttonText}>Log In</Text>
             </Pressable>
