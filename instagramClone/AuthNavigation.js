@@ -1,10 +1,6 @@
-import {View, Text} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {SignedInStack, SignedOutStack} from './navigation';
-// import {firebase} from '@react-native-firebase/firestore';
-// import {firebase} from '@react-native-firebase/installations';
 import firebase from '@react-native-firebase/app';
-import {useGestureHandlerRef} from '@react-navigation/stack';
 
 const AuthNavigation = () => {
   const [currentUser, setCurrentUser] = useState(null);
