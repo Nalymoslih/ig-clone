@@ -11,9 +11,7 @@ import React from 'react';
 import {Formik} from 'formik';
 import * as yup from 'yup';
 import Validator from 'email-validator';
-// import firebase from '../../firebase';
 import {firebase} from '@react-native-firebase/installations';
-import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
 const SignupForm = ({navigation}) => {
