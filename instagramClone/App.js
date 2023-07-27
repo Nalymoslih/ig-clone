@@ -1,6 +1,9 @@
 import React, {useEffect} from 'react';
 import SignedInStack from './navigation';
 import firebase from '@react-native-firebase/app';
+import AuthNavigation from './AuthNavigation';
+// import '@react-native-firebase/auth';
+// import '@react-native-firebase/firestore';
 
 function App() {
   useEffect(() => {
@@ -18,7 +21,7 @@ function App() {
       firebase.app();
     }
   }, []);
-  return <SignedInStack />;
+  return <AuthNavigation />;
 }
 
 export default App;
