@@ -12,10 +12,12 @@ import React from 'react';
 import {Formik} from 'formik';
 import * as yup from 'yup';
 import Validator from 'email-validator';
-import {firebase} from '@react-native-firebase/installations';
+import firestore from '@react-native-firebase/firestore';
 
 import auth from '@react-native-firebase/auth';
 const LoginForm = ({navigation}) => {
+  const db = firestore();
+
   const LoginFormSchema = yup.object().shape({
     email: yup.string().email().required('An email is required'),
     password: yup
@@ -39,7 +41,7 @@ const LoginForm = ({navigation}) => {
     <View style={styles.wrapper}>
       <Formik
         initialValues={{email: '', password: ''}}
-        onSubmit={values => {
+        onSubmit={async values => {
           onLogin(values.email, values.password);
         }}
         validationSchema={LoginFormSchema}
@@ -97,10 +99,22 @@ const LoginForm = ({navigation}) => {
               titleSize={20}
               style={styles.button(isValid)}
               onPress={handleSubmit}
+              // onPress={async () => {
+              //   try {
+              //     await db.collection('users').add({
+              //       authUser_uid: authUser.user.uid,
+              //       username: user,
+              //       email: authUser.user.email,
+              //       profilePicture: await getRandomProfilePicture(),
+              //     });
+              //   } catch (error) {
+              //     console.log(error);
+              //   }
+              // }}
               disabled={!isValid}>
               <Text style={styles.buttonText}>Log In</Text>
             </Pressable>
-            {/* <Text style={styles.buttonText}>Log In</Text> */}
+            <Text style={styles.buttonText}>Log In</Text>
 
             <View style={styles.signUpContainer}>
               <Text>Dont't have an account? </Text>
