@@ -10,11 +10,12 @@ export const USERS = [
   },
   {
     user: 'KawanEdris',
-    image: 'https://picsum.photos/200/300?grayscale',
+    image: 'https://picsum.photos/id/237/200/300',
   },
   {
-    user: 'ShakewMoslih',
-    image: 'https://picsum.photos/id/237/200/300',
+    user: 'Dlier',
+    image:
+      'https://i.pinimg.com/originals/d5/29/09/d52909b3751b3f8507873d280295ccc7.jpg',
   },
   {
     user: 'BanderHaider',
