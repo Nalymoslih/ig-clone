@@ -29,9 +29,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.9)',
   },
   modalImage: {
-    width: 200,
-    height: 200,
+    width: 500,
+    height: 500,
     borderRadius: 10,
+    // resizeMode: 'cover',
   },
   closeButton: {
     marginTop: 20,
