@@ -13,7 +13,7 @@ export const USERS = [
     image: 'https://picsum.photos/id/237/200/300',
   },
   {
-    user: 'Dlier',
+    user: 'Dlier Vana',
     image:
       'https://i.pinimg.com/originals/d5/29/09/d52909b3751b3f8507873d280295ccc7.jpg',
   },
