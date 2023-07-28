@@ -29,7 +29,7 @@ const Stories = () => {
             key={index}
             onPress={() => handleImagePress(story.image)}>
             <Image style={styles.story} source={{uri: story.image}} />
-            <Text style={{color: 'white', marginLeft: 20}}>
+            <Text style={{color: 'white', marginLeft: 10}}>
               {story.user.length > 11
                 ? story.user.slice(0, 6).toLowerCase() + '...'
                 : story.user.toLowerCase()}

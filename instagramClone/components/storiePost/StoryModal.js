@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 const StoryModal = ({visible, image, onClose}) => {
+  const [userImage, setUserImage] = useState('');
   return (
     <Modal visible={visible} animationType="fade" onRequestClose={onClose}>
       <View style={styles.modalContainer}>
