@@ -6,46 +6,55 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {USERS} from '../../data/users';
-
-import {useNavigation} from '@react-navigation/native';
+import StoryModal from '../storiePost/StoryModal';
 
 const Stories = () => {
-  const navigation = useNavigation();
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImagePress = image => {
+    setSelectedImage(image);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <View style={{marginBottom: 20}}>
-      <TouchableOpacity onPress={() => navigation.navigate('StoriePost')}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {USERS.map((story, index) => (
-            <View key={index} style={{alignItems: 'center'}}>
-              <Image
-                style={styles.story}
-                source={{
-                  uri: story.image,
-                }}
-              />
-              <Text style={{color: 'white', marginLeft: 10}}>
-                {story.user.length > 11
-                  ? story.user.slice(0, 6).toLowerCase() + '...'
-                  : story.user.toLowerCase()}
-              </Text>
-            </View>
-          ))}
-        </ScrollView>
-      </TouchableOpacity>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        {USERS.map((story, index) => (
+          <TouchableOpacity
+            key={index}
+            onPress={() => handleImagePress(story.image)}>
+            <Image style={styles.story} source={{uri: story.image}} />
+            <Text style={{color: 'white', marginLeft: 20}}>
+              {story.user.length > 11
+                ? story.user.slice(0, 6).toLowerCase() + '...'
+                : story.user.toLowerCase()}
+            </Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+      <StoryModal
+        visible={!!selectedImage}
+        image={selectedImage}
+        onClose={handleCloseModal}
+      />
     </View>
   );
 };
-// console.log(USERS);
+
 const styles = StyleSheet.create({
   story: {
     width: 70,
     height: 70,
     borderRadius: 50,
+    marginHorizontal: 5,
+    borderColor: '#ff8501',
     borderWidth: 3,
     marginLeft: 16,
-    borderColor: '#ff8501',
   },
 });
 
