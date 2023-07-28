@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.9)',
   },
   modalImage: {
-    width: 500,
+    width: 450,
     height: 500,
     borderRadius: 10,
     // resizeMode: 'cover',
