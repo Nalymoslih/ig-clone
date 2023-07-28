@@ -27,7 +27,7 @@ const Stories = () => {
         {USERS.map((story, index) => (
           <TouchableOpacity
             key={index}
-            onPress={() => handleImagePress(story.image)}>
+            onPress={() => handleImagePress(story.imageStories)}>
             <Image style={styles.story} source={{uri: story.image}} />
             <Text style={{color: 'white', marginLeft: 10}}>
               {story.user.length > 11
