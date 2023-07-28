@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  Pressable,
-} from 'react-native';
+import {View, Text, Image, StyleSheet, Pressable} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 
@@ -61,7 +54,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 53,
     left: 60,
-    // marginRight: 23,
     zIndex: 10,
   },
   story: {
