@@ -13,11 +13,11 @@ const StoriePost = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.headerContainer}>
-      <TouchableOpacity
+      <Pressable
+        style={styles.Container}
         onPress={() => {
-          navigation.navigate('StoriePost');
-        }}></TouchableOpacity>
-      <Pressable>
+          navigation.navigate('HomeScreen');
+        }}>
         <Image
           source={{uri: 'https://img.icons8.com/ios-glyphs/90/ffffff/back.png'}}
           style={{width: 30, height: 30, marginBottom: 550}}
@@ -29,9 +29,9 @@ const StoriePost = () => {
       <View>
         <Image
           source={{
-            url: 'https://i.pinimg.com/originals/d5/29/09/d52909b3751b3f8507873d280295ccc7.jpg',
+            url: 'https://envri.eu/wp-content/uploads/2016/08/software-developer-copy.jpg',
           }}
-          style={{width: 100, height: 100}}
+          style={styles.story}
         />
       </View>
     </View>
@@ -40,18 +40,35 @@ const StoriePost = () => {
 
 const styles = StyleSheet.create({
   headerContainer: {
+    position: 'relative',
     backgroundColor: 'black',
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  Container: {
+    position: 'absolute',
+    top: 50,
+    left: 20,
+    zIndex: 10,
+  },
   headerText: {
     marginBottom: 550,
     color: 'white',
     fontWeight: '700',
     fontSize: 20,
-    marginRight: 23,
+    position: 'absolute',
+    top: 53,
+    left: 60,
+    // marginRight: 23,
+    zIndex: 10,
+  },
+  story: {
+    position: 'relative',
+    width: 400,
+    flex: 1,
+    resizeMode: 'cover',
   },
 });
 
