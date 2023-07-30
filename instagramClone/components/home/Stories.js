@@ -8,18 +8,11 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import {USERS} from '../../data/users';
-import StoryModal from '../storiePost/StoryModal';
+
+import {useNavigation} from '@react-navigation/native';
 
 const Stories = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  const handleImagePress = image => {
-    setSelectedImage(image);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedImage(null);
-  };
+  const navigation = useNavigation();
 
   return (
     <View style={{marginBottom: 20}}>
@@ -27,7 +20,7 @@ const Stories = () => {
         {USERS.map((story, index) => (
           <TouchableOpacity
             key={index}
-            onPress={() => handleImagePress(story.imageStories)}>
+            onPress={() => navigation.push('StoriePost')}>
             <Image style={styles.story} source={{uri: story.image}} />
             <Text style={{color: 'white', marginLeft: 10}}>
               {story.user.length > 11
@@ -37,11 +30,6 @@ const Stories = () => {
           </TouchableOpacity>
         ))}
       </ScrollView>
-      <StoryModal
-        visible={!!selectedImage}
-        image={selectedImage}
-        onClose={handleCloseModal}
-      />
     </View>
   );
 };
