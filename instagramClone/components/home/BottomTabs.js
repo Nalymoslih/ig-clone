@@ -1,31 +1,39 @@
 import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import Reels from '../../screens/Reels';
 
 export const bottomTabIcons = [
   {
+    id: 1,
     name: 'Home',
     active: 'https://img.icons8.com/fluency-systems-filled/60/ffffff/home.png',
     inactive:
       'https://img.icons8.com/fluency-systems-regular/60/ffffff/home.png',
   },
   {
+    id: 2,
     name: 'Search',
     active: 'https://img.icons8.com/ios-filled/50/fa314a/search--v1.png',
     inactive: 'https://img.icons8.com/ios/50/fa314a/search--v1.png',
   },
   {
+    id: 3,
     name: 'Reels',
     active: 'https://img.icons8.com/ios-filled/500/ffffff/instagram-reel.png',
     inactive: 'https://img.icons8.com/ios/500/ffffff/instagram-reel.png',
   },
   {
+    id: 4,
     name: 'Shop',
     active:
       'https://img.icons8.com/fluency-systems-filled/60/ffffff/shopping-bag-full.png',
     inactive:
       'https://img.icons8.com/fluency-systems-regular/60/ffffff/shopping-bag-full.png',
   },
+
   {
+    id: 5,
     name: 'Profile',
     active: 'https://pbs.twimg.com/media/FADhDRwXoAA8Rbc.jpg',
     inactive: 'https://pbs.twimg.com/media/FADhDRwXoAA8Rbc.jpg',
@@ -33,9 +41,21 @@ export const bottomTabIcons = [
 ];
 
 const BottomTabs = ({icons}) => {
+  const navigation = useNavigation();
   const [activeTab, setActiveTab] = useState('Home');
   const Icon = ({icon}) => (
-    <TouchableOpacity onPress={() => setActiveTab(icon.name)}>
+    <TouchableOpacity
+      onPress={() => {
+        setActiveTab(icon.name);
+        navigation.push('Reels');
+      }}>
+      <TouchableOpacity onPress={() => {}}>
+        <Image
+          source={{
+            uri: 'https://img.icons8.com/ios-filled/500/ffffff/instagram-reel.png',
+          }}
+        />
+      </TouchableOpacity>
       <Image
         source={{uri: activeTab === icon.name ? icon.active : icon.inactive}}
         style={[
