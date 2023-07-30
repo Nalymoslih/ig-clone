@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {SignedInStack, SignedOutStack} from './navigation';
 import firebase from '@react-native-firebase/app';
+import {Text} from 'react-native';
 
 const AuthNavigation = () => {
   const [currentUser, setCurrentUser] = useState(null);
