@@ -1,6 +1,7 @@
 import {View, Text, Image, StyleSheet, Pressable} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
+import {USERS} from '../../data/users';
 
 const StoriePost = () => {
   const navigation = useNavigation();
@@ -20,12 +21,13 @@ const StoriePost = () => {
       <Text></Text>
 
       <View>
-        <Image
-          source={{
-            url: 'https://envri.eu/wp-content/uploads/2016/08/software-developer-copy.jpg',
-          }}
-          style={styles.story}
-        />
+        {USERS.map((story, index) => (
+          <Image
+            key={index}
+            style={styles.story}
+            source={{uri: story.imageStories}}
+          />
+        ))}
       </View>
     </View>
   );
