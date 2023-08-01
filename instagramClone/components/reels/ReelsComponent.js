@@ -14,7 +14,7 @@ const ReelsComponent = () => {
       data={videos}
       vertical={true}
       onChangeIndex={handleChangeIndexValue}
-      renderItem={(item, index) => (
+      renderItem={({item, index}) => (
         <SingleReel item={item} index={index} cuurentIndex={cuurentIndex} />
       )}
       keyExtractor={({item, index}) => index}
