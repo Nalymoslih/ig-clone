@@ -9,9 +9,7 @@ import {
 import React, {useRef, useState} from 'react';
 import Video from 'react-native-video';
 import {SafeAreaView} from 'react-navigation';
-import {set} from 'mongoose';
 // import videos from '../../data/videos';
-import Ionic from 'react-native-vector-icons/Ionicons';
 
 const SingleReel = ({item, index, currentIndex}) => {
   const windowWidth = Dimensions.get('window').width;
@@ -46,6 +44,7 @@ const SingleReel = ({item, index, currentIndex}) => {
           onError={onError}
           repeat={true}
           paused={currentIndex == index}
+          // paused={currentIndex == index ? false : true}
           resizeMode="cover"
           source={item.vdo}
           muted={mute}
