@@ -1,5 +1,7 @@
 export const videos = [
   {
+    id: 1,
+    // url: 'https://www.youtube.com/shorts/HTBIfv2hRmg',
     vdo: require('../storage/videos/video1.mp4'),
     title: 'Naly_Moslih',
     description: 'Feeling good today',
@@ -7,6 +9,7 @@ export const videos = [
     isLiked: false,
   },
   {
+    id: 2,
     vdo: require('../storage/videos/video2.mp4'),
     title: 'Yusf_jasim',
     description: 'Feeling good today',
@@ -14,6 +17,7 @@ export const videos = [
     isLiked: false,
   },
   {
+    id: 3,
     vdo: require('../storage/videos/video3.mp4'),
     title: 'Naly_Moslih',
     description: 'Feeling good today',
@@ -21,6 +25,7 @@ export const videos = [
     isLiked: false,
   },
   {
+    id: 4,
     vdo: require('../storage/videos/video4.mp4'),
     title: 'Yusf_jasim',
     description: 'Feeling good today',
