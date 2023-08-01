@@ -13,9 +13,18 @@ const ReelsComponent = () => {
     <SwiperFlatList
       data={videos}
       vertical={true}
+      viewabilityConfig={{
+        // viewAreaCoveragePercentThreshold: 10,
+        itemVisiblePercentThreshold: 1,
+      }}
       onChangeIndex={handleChangeIndexValue}
       renderItem={({item, index}) => (
-        <SingleReel item={item} index={index} cuurentIndex={cuurentIndex} />
+        <SingleReel
+          key={index}
+          item={item}
+          index={index}
+          cuurentIndex={cuurentIndex}
+        />
       )}
       keyExtractor={({item, index}) => index}
     />

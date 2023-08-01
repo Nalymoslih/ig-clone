@@ -2,6 +2,7 @@ export const videos = [
   {
     id: 1,
     // url: 'https://www.youtube.com/shorts/HTBIfv2hRmg',
+    postProfile: require('../storage/images/profile1.jpg'),
     vdo: require('../storage/videos/video1.mp4'),
     title: 'Naly_Moslih',
     description: 'Feeling good today',
@@ -10,6 +11,7 @@ export const videos = [
   },
   {
     id: 2,
+    postProfile: require('../storage/images/profile2.jpg'),
     vdo: require('../storage/videos/video2.mp4'),
     title: 'Yusf_jasim',
     description: 'Feeling good today',
@@ -18,6 +20,7 @@ export const videos = [
   },
   {
     id: 3,
+    postProfile: require('../storage/images/profile3.jpg'),
     vdo: require('../storage/videos/video3.mp4'),
     title: 'Naly_Moslih',
     description: 'Feeling good today',
@@ -26,6 +29,7 @@ export const videos = [
   },
   {
     id: 4,
+    postProfile: require('../storage/images/profile4.jpg'),
     vdo: require('../storage/videos/video4.mp4'),
     title: 'Yusf_jasim',
     description: 'Feeling good today',
