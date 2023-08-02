@@ -5,6 +5,7 @@ const Chat = () => {
   return (
     <View>
       <Text style={{top: 50}}>Chat</Text>
+      <Text style={{top: 50}}>Chat</Text>
     </View>
   );
 };
