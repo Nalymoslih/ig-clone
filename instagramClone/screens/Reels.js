@@ -32,7 +32,7 @@ const Reels = () => {
           padding: 10,
         }}>
         <TouchableOpacity onPress={() => navigation.goBack('HomeScreen')}>
-          <Text style={{fontSize: 20, fontWeight: 'bold', color: 'white'}}>
+          <Text style={{fontSize: 20, fontWeight: 'bold', color: 'black'}}>
             Reels
           </Text>
         </TouchableOpacity>
