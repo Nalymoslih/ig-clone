@@ -38,7 +38,7 @@ const header = ({navigation}) => {
             style={styles.icon}
           />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.push('ChatScreen')}>
           <View style={styles.unreadBadge}>
             <Text style={styles.unreadBadgeText}>11</Text>
           </View>

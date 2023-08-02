@@ -1,34 +1,53 @@
-import {View, Text} from 'react-native';
+import {View, Text, Alert} from 'react-native';
 import React, {useState, useRef, useEffect} from 'react';
 import {SwiperFlatList} from 'react-native-swiper-flatlist';
 import {videos} from '../../data/videos';
 import SingleReel from './SingleReel';
 
 const ReelsComponent = () => {
-  const [cuurentIndex, setCurrentIndex] = useState(0);
-  const handleChangeIndexValue = index => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleChangeIndexValue = ({index}) => {
     setCurrentIndex(index);
   };
+
   return (
     <SwiperFlatList
-      data={videos}
       vertical={true}
-      viewabilityConfig={{
-        // viewAreaCoveragePercentThreshold: 10,
-        itemVisiblePercentThreshold: 1,
-      }}
       onChangeIndex={handleChangeIndexValue}
+      data={videos}
       renderItem={({item, index}) => (
-        <SingleReel
-          key={index}
-          item={item}
-          index={index}
-          cuurentIndex={cuurentIndex}
-        />
+        <SingleReel item={item} index={index} currentIndex={currentIndex} />
       )}
-      keyExtractor={({item, index}) => index}
+      keyExtractor={(item, index) => index}
     />
   );
 };
-
 export default ReelsComponent;
+
+// const ReelsComponent = () => {
+//   const [cuurentIndex, setCurrentIndex] = useState(0);
+//   const handleChangeIndexValue = index => {
+//     setCurrentIndex(index);
+//   };
+//   return (
+//     <SwiperFlatList
+//       data={videos}
+//       vertical={true}
+//       viewabilityConfig={{
+//         // viewAreaCoveragePercentThreshold: 10,
+//         itemVisiblePercentThreshold: 1,
+//       }}
+//       onChangeIndex={handleChangeIndexValue}
+//       renderItem={({item, index}) => (
+//         <SingleReel
+//           key={index}
+//           item={item}
+//           index={index}
+//           cuurentIndex={cuurentIndex}
+//         />
+//       )}
+//       keyExtractor={({item, index}) => index}
+//     />
+//   );
+// };

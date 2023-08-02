@@ -7,6 +7,7 @@ import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import StoriePost from './components/storiePost/StoriePost';
 import Reels from './screens/Reels';
+import ChatScreen from './screens/ChatScreen';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ export const SignedInStack = () => (
       <Stack.Screen name="NewPostScreen" component={NewPostScreen} />
       <Stack.Screen name="StoriePost" component={StoriePost} />
       <Stack.Screen name="Reels" component={Reels} />
+      <Stack.Screen name="ChatScreen" component={ChatScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );

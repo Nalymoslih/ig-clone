@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import firebase from '@react-native-firebase/app';
 import AuthNavigation from './AuthNavigation';
+import ReelsComponent from './components/reels/ReelsComponent';
 
 function App() {
   useEffect(() => {

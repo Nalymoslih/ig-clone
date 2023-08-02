@@ -6,9 +6,9 @@ import {
   FlatList,
   Image,
 } from 'react-native';
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import Video from 'react-native-video';
-import {SafeAreaView} from 'react-navigation';
+// import {SafeAreaView} from 'react-navigation';
 // import videos from '../../data/videos';
 
 const SingleReel = ({item, index, currentIndex}) => {
@@ -25,6 +25,15 @@ const SingleReel = ({item, index, currentIndex}) => {
 
   const [mute, setMute] = useState(false);
   const [like, setLike] = useState(item.isLike);
+  const [shouldRenderVideo, setShouldRenderVideo] = useState(false);
+
+  useEffect(() => {
+    if (currentIndex === index) {
+      setShouldRenderVideo(true);
+    } else {
+      setShouldRenderVideo(false);
+    }
+  }, [currentIndex, index]);
   // console.log(item);
 
   return (
@@ -43,8 +52,7 @@ const SingleReel = ({item, index, currentIndex}) => {
           onBuffer={onBuffer}
           onError={onError}
           repeat={true}
-          paused={currentIndex == index}
-          // paused={currentIndex == index ? false : true}
+          paused={currentIndex !== index}
           resizeMode="cover"
           source={item.vdo}
           muted={mute}
@@ -58,11 +66,11 @@ const SingleReel = ({item, index, currentIndex}) => {
       <Image
         style={{
           fontSize: mute ? 30 : 0,
-          collor: 'white',
+          color: 'white',
           position: 'absolute',
           top: windowHeight / 2.3,
           left: windowWidth / 2.3,
-          backgroundColor: 'rgbe(52,52,52,0.6)',
+          backgroundColor: 'rgbe(52,52,52,0.5)',
           borderRadius: 100,
           padding: mute ? 20 : 0,
         }}
