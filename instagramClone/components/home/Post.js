@@ -83,7 +83,6 @@ const PostFooter = () => (
     </View>
   </View>
 );
-
 const Icon = ({imgStyle, imgUrl}) => (
   <TouchableOpacity>
     <Image source={{uri: imgUrl}} style={imgStyle} />
