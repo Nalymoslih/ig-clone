@@ -20,7 +20,6 @@ const HomeScreen = () => {
         ))}
       </ScrollView>
       <BottomTabs icons={bottomTabIcons} />
-      {/* <Reels /> */}
     </SafeAreaView>
   );
 };
