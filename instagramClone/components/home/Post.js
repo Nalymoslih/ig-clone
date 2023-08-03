@@ -59,7 +59,6 @@ const PostHeader = ({post}) => (
     <Text style={{color: 'white', fontWeight: 900}}>...</Text>
   </View>
 );
-
 const PostImage = ({post}) => (
   <View style={{width: '100%', height: 450}}>
     <Image
