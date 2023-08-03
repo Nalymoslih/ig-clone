@@ -4,7 +4,6 @@ import {GiftedChat} from 'react-native-gifted-chat';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
-
   const database = firebase.firestore();
   const messagesRef = database.collection('messages');
   const unsubFromMessagesRef = React.useRef();
@@ -16,7 +15,6 @@ const Chat = () => {
         setMessages([]);
         setMessages(snapshot._docs);
       });
-
     unsubFromMessagesRef.current = unsubFromMessages;
   };
 
