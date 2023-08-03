@@ -44,7 +44,6 @@ const Reels = () => {
         /> */}
       </View>
       <ReelsComponent />
-      {/* <SingleReel /> */}
     </View>
   );
 };
