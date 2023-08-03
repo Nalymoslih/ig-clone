@@ -72,18 +72,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     resizeMode: 'contain',
   },
-  unreadBadge: {
-    backgroundColor: '#FF3250',
-    position: 'absolute',
-    left: 20,
-    bottom: 18,
-    width: 25,
-    height: 18,
-    borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center',
-    zIndex: 100,
-  },
   unreadBadgeText: {
     color: 'white',
     fontWeight: '600',
