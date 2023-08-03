@@ -95,7 +95,6 @@ const Likes = ({post}) => (
     </Text>
   </View>
 );
-
 const Caption = ({post}) => (
   <View style={{marginTop: 5}}>
     <Text style={{color: 'white'}}>
