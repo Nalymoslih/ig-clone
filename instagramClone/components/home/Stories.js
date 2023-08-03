@@ -68,7 +68,6 @@ const Stories = () => {
       return prevSet;
     });
   };
-
   const handleSeenStories = async item => {
     console.log(item);
     const storyIds = [];
