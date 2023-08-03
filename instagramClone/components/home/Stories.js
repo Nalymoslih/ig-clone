@@ -11,7 +11,6 @@ import React, {useState} from 'react';
 import {USERS} from '../../data/users';
 import InstaStory from 'react-native-insta-story';
 import {shareStory} from 'react-native';
-
 import {useNavigation} from '@react-navigation/native';
 
 const Stories = () => {
