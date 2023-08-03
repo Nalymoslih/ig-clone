@@ -32,7 +32,6 @@ const Chat = () => {
       message: messages[0].text,
       createdAt: new Date(),
     };
-
     messagesRef.add(message);
   }, []);
   return (
