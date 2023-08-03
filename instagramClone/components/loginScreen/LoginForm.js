@@ -15,7 +15,6 @@ import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 const LoginForm = ({navigation}) => {
   const db = firestore();
-
   const LoginFormSchema = yup.object().shape({
     email: yup.string().email().required('An email is required'),
     password: yup
