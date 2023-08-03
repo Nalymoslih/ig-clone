@@ -119,33 +119,6 @@ const StoriePost = () => {
     )}
     style={{marginTop: 30}}
   />;
-  // TESt
-  // return (
-  //   <View style={styles.headerContainer}>
-  //     <Pressable
-  //       style={styles.Container}
-  //       onPress={() => {
-  //         navigation.navigate('HomeScreen');
-  //       }}>
-  //       <Image
-  //         source={{uri: 'https://img.icons8.com/ios-glyphs/90/ffffff/back.png'}}
-  //         style={{width: 30, height: 30, marginBottom: 550}}
-  //       />
-  //     </Pressable>
-  //     <Text style={styles.headerText}>Stories</Text>
-  //     <Text></Text>
-
-  //     <View>
-  //       {USERS.map((story, index) => (
-  //         <Image
-  //           key={index}
-  //           style={styles.story}
-  //           source={{uri: story.imageStories}}
-  //         />
-  //       ))}
-  //     </View>
-  //   </View>
-  // );
 };
 
 const styles = StyleSheet.create({
