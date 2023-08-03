@@ -10,7 +10,6 @@ import Reels from './screens/Reels';
 import ChatScreen from './screens/ChatScreen';
 
 const Stack = createStackNavigator();
-
 const screenOptions = {
   headerShown: false,
 };
