@@ -103,7 +103,6 @@ const Caption = ({post}) => (
     </Text>
   </View>
 );
-
 const CommentsSecotion = ({post}) => (
   <View style={{marginTop: 5}}>
     {!!post.comments.length && (
