@@ -113,7 +113,6 @@ const CommentsSecotion = ({post}) => (
     )}
   </View>
 );
-
 const Comments = ({post}) => (
   <>
     {post.comments.map((comment, index) => (
