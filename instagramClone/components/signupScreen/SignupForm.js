@@ -144,7 +144,6 @@ const SignupForm = ({navigation}) => {
               disabled={!isValid}>
               <Text style={styles.buttonText}>Sign Up</Text>
             </Pressable>
-            {/* <Text style={styles.buttonText}>Log In</Text> */}
 
             <View style={styles.signUpContainer}>
               <Text>Dont't have an account? </Text>
