@@ -6,7 +6,6 @@ import Post from '../components/home/Post';
 import {POSTS} from '../data/posts';
 import BottomTabs, {bottomTabIcons} from '../components/home/BottomTabs';
 import {useNavigation} from '@react-navigation/native';
-import Reels from './Reels';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
