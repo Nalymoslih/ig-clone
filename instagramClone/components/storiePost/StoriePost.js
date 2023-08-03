@@ -1,7 +1,6 @@
 import {View, Text, Image, StyleSheet, Pressable} from 'react-native';
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
-// import {USERS} from '../../data/users';
 import InstaStory from 'react-native-insta-story';
 
 const StoriePost = () => {
