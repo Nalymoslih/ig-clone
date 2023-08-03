@@ -8,7 +8,6 @@ const AddNewPost = ({navigation}) => (
     <FormikPostUploaded navigation={navigation} />
   </View>
 );
-
 const Header = ({navigation}) => (
   <View style={styles.headerContainer}>
     <TouchableOpacity onPress={() => navigation.goBack('HomeScreen')}>
@@ -21,7 +20,6 @@ const Header = ({navigation}) => (
     <Text></Text>
   </View>
 );
-
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
