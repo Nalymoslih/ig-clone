@@ -22,7 +22,6 @@ const LoginForm = ({navigation}) => {
       .required('A password is required')
       .min(6, 'Password is too short - should be 8 chars minimum.'),
   });
-
   const onLogin = async (email, password) => {
     try {
       await auth().signInWithEmailAndPassword(email, password);
@@ -33,7 +32,6 @@ const LoginForm = ({navigation}) => {
       );
     }
   };
-
   return (
     <View style={styles.wrapper}>
       <Formik
