@@ -88,7 +88,6 @@ const Icon = ({imgStyle, imgUrl}) => (
     <Image source={{uri: imgUrl}} style={imgStyle} />
   </TouchableOpacity>
 );
-
 const Likes = ({post}) => (
   <View style={{flexDirection: 'row', marginTop: 4}}>
     <Text style={{color: 'white', fontWeight: 600}}>
