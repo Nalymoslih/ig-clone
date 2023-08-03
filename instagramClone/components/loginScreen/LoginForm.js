@@ -12,7 +12,6 @@ import {Formik} from 'formik';
 import * as yup from 'yup';
 import Validator from 'email-validator';
 import firestore from '@react-native-firebase/firestore';
-
 import auth from '@react-native-firebase/auth';
 const LoginForm = ({navigation}) => {
   const db = firestore();
