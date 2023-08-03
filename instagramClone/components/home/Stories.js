@@ -106,8 +106,6 @@ const Stories = () => {
       )}
       style={{marginTop: 30}}
     />
-
-    // TESt
   );
 };
 
