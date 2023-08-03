@@ -1,7 +1,5 @@
 import {View, Text, Dimensions, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {Videos} from '../data/videos';
-import Feather from 'react-native-vector-icons/Feather';
 import ReelsComponent from '../components/reels/ReelsComponent';
 import {useNavigation} from '@react-navigation/native';
 
