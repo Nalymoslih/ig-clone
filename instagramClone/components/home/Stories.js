@@ -15,7 +15,6 @@ import {useNavigation} from '@react-navigation/native';
 
 const Stories = () => {
   const navigation = useNavigation();
-
   const data = [
     {
       user_id: 1,
