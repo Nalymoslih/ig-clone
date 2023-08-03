@@ -7,7 +7,6 @@ const Chat = () => {
   const database = firebase.firestore();
   const messagesRef = database.collection('messages');
   const unsubFromMessagesRef = React.useRef();
-
   const getMessages = uid => {
     const unsubFromMessages = messagesRef
       .orderBy('createdAt', 'desc')
