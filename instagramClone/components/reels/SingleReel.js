@@ -8,8 +8,6 @@ import {
 } from 'react-native';
 import React, {useRef, useState, useEffect} from 'react';
 import Video from 'react-native-video';
-// import {SafeAreaView} from 'react-navigation';
-// import videos from '../../data/videos';
 
 const SingleReel = ({item, index, currentIndex}) => {
   const windowWidth = Dimensions.get('window').width;
