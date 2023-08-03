@@ -32,6 +32,7 @@ const Chat = () => {
   }, []);
 
   const onSend = useCallback((messages = []) => {
+    const user = firebase.auth().currentUser;
     const message = {
       message: messages[0].text,
       createdAt: new Date(),
