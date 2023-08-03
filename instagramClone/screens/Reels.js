@@ -36,12 +36,6 @@ const Reels = () => {
             Reels
           </Text>
         </TouchableOpacity>
-        {/* <Feather
-          name="camera"
-          size={30}
-          color="black"
-          style={{fontSize: 20, color: 'white'}}
-        /> */}
       </View>
       <ReelsComponent />
     </View>
