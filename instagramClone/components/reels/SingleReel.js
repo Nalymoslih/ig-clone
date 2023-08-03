@@ -32,7 +32,6 @@ const SingleReel = ({item, index, currentIndex}) => {
       setShouldRenderVideo(false);
     }
   }, [currentIndex, index]);
-  // console.log(item);
 
   return (
     <View
