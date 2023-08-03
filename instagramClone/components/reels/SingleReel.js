@@ -121,21 +121,7 @@ const SingleReel = ({item, index, currentIndex}) => {
             }}>
             {item.description}
           </Text>
-          <View>
-            {/* <Image
-              style={{
-                width: 30,
-                height: 30,
-                color: 'white',
-                borderRadius: 100,
-                top: 60,
-              }}
-              source={{
-                uri: 'https://static.vecteezy.com/system/resources/previews/000/421/044/original/music-note-icon-vector-illustration.jpg',
-              }}
-            /> */}
-            {/* <Text style={{color: 'white', top: 60}}>Orginal audio</Text> */}
-          </View>
+          <View></View>
         </View>
       </View>
       <View
