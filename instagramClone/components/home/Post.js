@@ -78,7 +78,6 @@ const PostFooter = () => (
         imgUrl={postFooterIcons[2].imageUrl}
       />
     </View>
-
     <View style={{flex: 1, alignItems: 'flex-end'}}>
       <Icon imgStyle={styles.footerIcon} imgUrl={postFooterIcons[3].imageUrl} />
     </View>
