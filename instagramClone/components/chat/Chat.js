@@ -16,7 +16,6 @@ const Chat = () => {
       });
     unsubFromMessagesRef.current = unsubFromMessages;
   };
-
   const closeChat = () => {
     setMessages([]);
     unsubFromMessagesRef.current && unsubFromMessagesRef.current();
