@@ -39,9 +39,6 @@ const header = ({navigation}) => {
           />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.push('ChatScreen')}>
-          {/* <View style={styles.unreadBadge}>
-            <Text style={styles.unreadBadgeText}>11</Text>
-          </View> */}
           <Image
             source={{
               url: 'https://img.icons8.com/fluency-systems-regular/60/ffffff/facebook-messenger.png',
