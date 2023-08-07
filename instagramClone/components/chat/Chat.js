@@ -1,6 +1,7 @@
 import {firebase} from '@react-native-firebase/app';
 import React, {useState, useCallback, useEffect} from 'react';
 import {GiftedChat} from 'react-native-gifted-chat';
+import socket from '../../Socket';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -22,6 +23,7 @@ const Chat = () => {
   };
   useEffect(() => {
     getMessages();
+    socket.emit('createRoom', 'room1');
     return () => {
       closeChat();
     };
