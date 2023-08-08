@@ -13,16 +13,20 @@ import * as yup from 'yup';
 import Validator from 'email-validator';
 import axios from 'axios';
 import auth from '@react-native-firebase/auth';
-const LoginForm = ({navigation}) => {
+import {useNavigation} from '@react-navigation/native';
+
+const LoginForm = () => {
+  const navigation = useNavigation();
+
   // const db = firestore();
   const LoginFormSchema = yup.object().shape({
     email: yup.string().email().required('An email is required'),
     password: yup
       .string()
       .required('A password is required')
-      .min(6, 'Password is too short - should be 8 chars minimum.'),
+      .min(6, 'Password is too short - should be 6 chars minimum.'),
   });
-
+  // const nav = useNavigation();
   const onLogin = async (email, password) => {
     try {
       const response = await fetch('http://localhost:3010/api/login', {
@@ -39,8 +43,8 @@ const LoginForm = ({navigation}) => {
       if (response.ok) {
         const data = await response.json();
         // Handle successful login, e.g., store token and navigate to a new screen
-        console.log(data.token);
-        navigation.navigate('HomeScreen');
+        console.log('token', data.token);
+        navigation.push('HomeScreen');
       } else {
         // Handle authentication error
         const errorData = await response.json();
