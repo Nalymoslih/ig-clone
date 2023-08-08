@@ -11,13 +11,9 @@ import React from 'react';
 import {Formik} from 'formik';
 import * as yup from 'yup';
 import Validator from 'email-validator';
-// import {firebase} from '@react-native-firebase/installations';
-// import firestore from '@react-native-firebase/firestore';
 import axios from 'axios';
 
 const SignupForm = ({navigation}) => {
-  // const db = firestore();
-
   const SignupFormSchema = yup.object().shape({
     email: yup.string().email().required('An email is required'),
     password: yup
@@ -25,43 +21,6 @@ const SignupForm = ({navigation}) => {
       .required('A password is required')
       .min(6, 'Password is too short - should be 6 chars minimum.'),
   });
-
-  // const getRandomProfilePicture = async () => {
-  //   const response = await fetch('https://randomuser.me/api/');
-  //   const data = await response.json();
-  //   return data.results[0].picture.large;
-  // };
-
-  // const onSignup = async (email, password, username) => {
-  //   try {
-  //     const authUser = await firebase
-  //       .auth()
-  //       .createUserWithEmailAndPassword(email, password);
-  //     console.log('Firebase Signup Successfull', email, password);
-  //     await db.collection('users').add({
-  //       authUser_uid: authUser.user.uid,
-  //       username: username,
-  //       email: authUser.user.email,
-  //       profilePicture: await getRandomProfilePicture(),
-  //     });
-  //   } catch (error) {
-  //     Alert.alert(
-  //       'My Lord...',
-  //       error.message + '\n\n... what would you like to do next? 👀',
-  //       [
-  //         {
-  //           text: 'Ok',
-  //           onPress: () => console.log('Ok'),
-  //           style: 'cancel',
-  //         },
-  //         {
-  //           text: 'Sign Up',
-  //           onPress: () => navigation.push('SignupScreen'),
-  //         },
-  //       ],
-  //     );
-  //   }
-  // };
 
   const onSignup = async (email, password, username) => {
     try {

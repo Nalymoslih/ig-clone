@@ -11,10 +11,10 @@ import React from 'react';
 import {Formik} from 'formik';
 import * as yup from 'yup';
 import Validator from 'email-validator';
-import firestore from '@react-native-firebase/firestore';
+import axios from 'axios';
 import auth from '@react-native-firebase/auth';
 const LoginForm = ({navigation}) => {
-  const db = firestore();
+  // const db = firestore();
   const LoginFormSchema = yup.object().shape({
     email: yup.string().email().required('An email is required'),
     password: yup
@@ -22,16 +22,35 @@ const LoginForm = ({navigation}) => {
       .required('A password is required')
       .min(6, 'Password is too short - should be 8 chars minimum.'),
   });
+
   const onLogin = async (email, password) => {
     try {
-      await auth().signInWithEmailAndPassword(email, password);
+      const response = await fetch('http://localhost:3010/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: email, // Assuming your backend expects 'user_name' for username
+          password,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Handle successful login, e.g., store token and navigate to a new screen
+        console.log(data.token);
+        navigation.navigate('HomeScreen');
+      } else {
+        // Handle authentication error
+        const errorData = await response.json();
+        Alert.alert('Authentication Error', errorData.error);
+      }
     } catch (error) {
-      Alert.alert(
-        'My Lord...',
-        error.message + '\n\n... what would you like to do next? 👀',
-      );
+      Alert.alert('Error', 'An error occurred during login.');
     }
   };
+
   return (
     <View style={styles.wrapper}>
       <Formik
