@@ -14,6 +14,9 @@ import Validator from 'email-validator';
 import axios from 'axios';
 import auth from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {Button} from 'react-native-elements';
+import {Store} from '../../redux/Store';
 
 const LoginForm = () => {
   const navigation = useNavigation();
@@ -27,6 +30,7 @@ const LoginForm = () => {
       .min(6, 'Password is too short - should be 6 chars minimum.'),
   });
   // const nav = useNavigation();
+
   const onLogin = async (email, password) => {
     try {
       const response = await fetch('http://localhost:3010/api/login', {
@@ -43,8 +47,11 @@ const LoginForm = () => {
       if (response.ok) {
         const data = await response.json();
         // Handle successful login, e.g., store token and navigate to a new screen
-        console.log('token', data.token);
-        navigation.push('HomeScreen');
+        console.log('token:', data);
+
+        await AsyncStorage.setItem('token', data.token);
+
+        // navigation.push('HomeScreen');
       } else {
         // Handle authentication error
         const errorData = await response.json();
@@ -120,6 +127,12 @@ const LoginForm = () => {
               disabled={!isValid}>
               <Text style={styles.buttonText}>Log In</Text>
             </Pressable>
+            {/* <Button
+              title={'Click'}
+              onPress={() => {
+                console.log(Store.getState(state => state));
+                Store.dispatch({type: 'setToken', payload: 'naly'});
+              }}></Button> */}
             <Text style={styles.buttonText}>Log In</Text>
 
             <View style={styles.signUpContainer}>

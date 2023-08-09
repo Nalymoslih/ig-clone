@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
 import firebase from '@react-native-firebase/app';
 import AuthNavigation from './AuthNavigation';
+import {Provider} from 'react-redux';
+import {Store} from '../instagramClone/redux/Store';
 
 function App() {
   useEffect(() => {
@@ -18,7 +20,11 @@ function App() {
       firebase.app();
     }
   }, []);
-  return <AuthNavigation />;
+  return (
+    <Provider store={Store}>
+      <AuthNavigation />
+    </Provider>
+  );
 }
 
 export default App;
