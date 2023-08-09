@@ -39,7 +39,7 @@ const LoginForm = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username: email, // Assuming your backend expects 'user_name' for username
+          email: email, // Assuming your backend expects 'user_name' for username
           password,
         }),
       });
@@ -123,7 +123,14 @@ const LoginForm = () => {
               title="Log In"
               titleSize={20}
               style={styles.button(isValid)}
-              onPress={handleSubmit}
+              onPress={() => {
+                console.log(Store.getState(state => state));
+                Store.dispatch({type: 'setToken', payload: 'naly'});
+
+                // Continue with the form submission
+                handleSubmit();
+                // navigation.navigate('HomeScreen');
+              }}
               disabled={!isValid}>
               <Text style={styles.buttonText}>Log In</Text>
             </Pressable>
