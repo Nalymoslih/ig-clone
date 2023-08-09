@@ -29,7 +29,6 @@ const LoginForm = () => {
       .required('A password is required')
       .min(6, 'Password is too short - should be 6 chars minimum.'),
   });
-  // const nav = useNavigation();
 
   const onLogin = async (email, password) => {
     try {
