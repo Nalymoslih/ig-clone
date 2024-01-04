@@ -14,7 +14,6 @@ const HomeScreen = () => {
 
 
 
-
   
       <Header navigation={navigation} />
       <Stories />
