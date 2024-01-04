@@ -11,6 +11,21 @@ const HomeScreen = () => {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
       <Header navigation={navigation} />
       <Stories />
       <ScrollView>
