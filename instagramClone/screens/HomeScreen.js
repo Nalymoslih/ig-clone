@@ -12,7 +12,6 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
 
-
   
       <Header navigation={navigation} />
       <Stories />
