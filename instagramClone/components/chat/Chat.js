@@ -38,7 +38,6 @@ const Chat = () => {
 
 
 
-
   
   const closeChat = () => {
     setMessages([]);
