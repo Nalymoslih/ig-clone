@@ -28,7 +28,6 @@ const Chat = () => {
       closeChat();
     };
   }, []);
-  
   const onSend = useCallback((messages = []) => {
     const user = firebase.auth().currentUser;
     const message = {
