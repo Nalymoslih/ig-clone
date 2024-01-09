@@ -34,9 +34,6 @@ const SingleReel = ({item, index, currentIndex}) => {
   }, [currentIndex, index]);
 
 
-
-
-
   
 
   return (
