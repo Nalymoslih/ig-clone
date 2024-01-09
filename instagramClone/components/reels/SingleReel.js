@@ -33,6 +33,16 @@ const SingleReel = ({item, index, currentIndex}) => {
     }
   }, [currentIndex, index]);
 
+
+
+
+
+
+
+
+
+  
+
   return (
     <View
       style={{width: windowWidth, height: windowHeight, position: 'relative'}}>
