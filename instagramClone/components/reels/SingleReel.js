@@ -32,10 +32,7 @@ const SingleReel = ({item, index, currentIndex}) => {
       setShouldRenderVideo(false);
     }
   }, [currentIndex, index]);
-
-
   
-
   return (
     <View
       style={{width: windowWidth, height: windowHeight, position: 'relative'}}>
