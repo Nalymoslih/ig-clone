@@ -40,7 +40,6 @@ const SingleReel = ({item, index, currentIndex}) => {
 
 
 
-
   
 
   return (
