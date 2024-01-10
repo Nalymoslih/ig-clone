@@ -67,7 +67,6 @@ const StoriePost = () => {
 
 
 
-
     
     {
       id: '2',
