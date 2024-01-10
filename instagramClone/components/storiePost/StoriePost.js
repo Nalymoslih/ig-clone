@@ -19,9 +19,6 @@ const StoriePost = () => {
         },
       ],
     },
-
-
-    
     {
       id: '2',
       user: 'Yusf_Jasm',
