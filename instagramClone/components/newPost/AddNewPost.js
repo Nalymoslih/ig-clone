@@ -20,6 +20,47 @@ const Header = ({navigation}) => (
     <Text></Text>
   </View>
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
