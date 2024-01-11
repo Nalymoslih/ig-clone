@@ -55,7 +55,6 @@ const Header = ({navigation}) => (
 
 
 
-
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
